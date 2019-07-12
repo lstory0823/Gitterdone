@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449C822D8CFC600CADBC6 /* AppDelegate.swift */; };
-		18D449CB22D8CFC600CADBC6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449CA22D8CFC600CADBC6 /* ViewController.swift */; };
+		18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */; };
 		18D449CE22D8CFC600CADBC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D449CC22D8CFC600CADBC6 /* Main.storyboard */; };
 		18D449D022D8CFC800CADBC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D449CF22D8CFC800CADBC6 /* Assets.xcassets */; };
 		18D449D322D8CFC800CADBC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D449D122D8CFC800CADBC6 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		18D449C522D8CFC600CADBC6 /* Gitterdone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitterdone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D449C822D8CFC600CADBC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18D449CA22D8CFC600CADBC6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitterdoneViewController.swift; sourceTree = "<group>"; };
 		18D449CD22D8CFC600CADBC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18D449CF22D8CFC800CADBC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D449D222D8CFC800CADBC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				18D449C822D8CFC600CADBC6 /* AppDelegate.swift */,
-				18D449CA22D8CFC600CADBC6 /* ViewController.swift */,
+				18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */,
 				18D449CC22D8CFC600CADBC6 /* Main.storyboard */,
 				18D449CF22D8CFC800CADBC6 /* Assets.xcassets */,
 				18D449D122D8CFC800CADBC6 /* LaunchScreen.storyboard */,
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D449CB22D8CFC600CADBC6 /* ViewController.swift in Sources */,
+				18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */,
 				18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W7676JXV3A;
 				INFOPLIST_FILE = Gitterdone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W7676JXV3A;
 				INFOPLIST_FILE = Gitterdone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
