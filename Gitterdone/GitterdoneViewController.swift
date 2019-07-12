@@ -12,10 +12,14 @@ class GitterdoneViewController: UITableViewController {
 
     var itemArray = ["Take Lizzie on first date", "Then second", "Then third"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
+        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+            itemArray = items
+        }
         
     }
 
@@ -56,6 +60,7 @@ class GitterdoneViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (alert) in
             //What will happen when the user clicks the add item button
             self.itemArray.append(textField.text!)
+            self.defaults.set(self.itemArray, forKey: "ToDoListArray")
             self.tableView.reloadData()
         }
         
