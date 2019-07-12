@@ -10,7 +10,7 @@ import UIKit
 
 class GitterdoneViewController: UITableViewController {
 
-    let itemArray = ["Take Lizzie on first date", "Then second", "Then third"]
+    var itemArray = ["Take Lizzie on first date", "Then second", "Then third"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,32 @@ class GitterdoneViewController: UITableViewController {
             
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+//MARK - Add New Items
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Gitterdone Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default) { (alert) in
+            //What will happen when the user clicks the add item button
+            self.itemArray.append(textField.text!)
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "New Item"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
     
 }
 
