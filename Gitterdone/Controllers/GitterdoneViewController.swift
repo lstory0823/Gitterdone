@@ -10,14 +10,23 @@ import UIKit
 
 class GitterdoneViewController: UITableViewController {
 
-    var itemArray = ["Take Lizzie on first date", "Then second", "Then third"]
+    var itemArray = [Item]()
     
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let newItem = Item()
+        newItem.title = "Go on first date with Lizzie"
+        itemArray.append(newItem)
+        
+        let newItem2 = Item()
+        newItem2.title = "Go on second date with Lizzie"
+        itemArray.append(newItem2)
+        
         // Do any additional setup after loading the view.
-        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+        if let items = defaults.array(forKey: "ToDoListArray") as? [Item] {
             itemArray = items
         }
         
@@ -30,9 +39,14 @@ class GitterdoneViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
         
-        cell.textLabel?.text = itemArray[indexPath.row]
+        let item = itemArray[indexPath.row]
+        
+        cell.textLabel?.text = itemArray[indexPath.row].title
+        
+        cell.accessoryType = item.completed == true ? .checkmark : .none
         
         return cell
     }
@@ -40,14 +54,11 @@ class GitterdoneViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // print(itemArray[indexPath.row])
         
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }
-        else {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
+        itemArray[indexPath.row].completed = !itemArray[indexPath.row].completed
             
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        tableView.reloadData()
     }
     
 //MARK - Add New Items
@@ -57,10 +68,15 @@ class GitterdoneViewController: UITableViewController {
         
         let alert = UIAlertController(title: "Add New Gitterdone Item", message: "", preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Add Item", style: .default) { (alert) in
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //What will happen when the user clicks the add item button
-            self.itemArray.append(textField.text!)
+            let newestItem = Item()
+            newestItem.title = textField.text!
+            
+            self.itemArray.append(newestItem)
+            
             self.defaults.set(self.itemArray, forKey: "ToDoListArray")
+            
             self.tableView.reloadData()
         }
         

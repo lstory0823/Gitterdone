@@ -12,6 +12,7 @@
 		18D449CE22D8CFC600CADBC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D449CC22D8CFC600CADBC6 /* Main.storyboard */; };
 		18D449D022D8CFC800CADBC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D449CF22D8CFC800CADBC6 /* Assets.xcassets */; };
 		18D449D322D8CFC800CADBC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D449D122D8CFC800CADBC6 /* LaunchScreen.storyboard */; };
+		18D449DC22D9384500CADBC6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449DB22D9384500CADBC6 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		18D449CF22D8CFC800CADBC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D449D222D8CFC800CADBC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D449D422D8CFC800CADBC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18D449DB22D9384500CADBC6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,46 @@
 			isa = PBXGroup;
 			children = (
 				18D449C822D8CFC600CADBC6 /* AppDelegate.swift */,
-				18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */,
-				18D449CC22D8CFC600CADBC6 /* Main.storyboard */,
-				18D449CF22D8CFC800CADBC6 /* Assets.xcassets */,
-				18D449D122D8CFC800CADBC6 /* LaunchScreen.storyboard */,
+				18D449DD22D93A6800CADBC6 /* DataModel */,
+				18D449E022D93B1700CADBC6 /* Controllers */,
+				18D449DE22D93A9300CADBC6 /* Views */,
+				18D449DF22D93AAB00CADBC6 /* Supporting Files */,
 				18D449D422D8CFC800CADBC6 /* Info.plist */,
 			);
 			path = Gitterdone;
+			sourceTree = "<group>";
+		};
+		18D449DD22D93A6800CADBC6 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				18D449DB22D9384500CADBC6 /* Item.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		18D449DE22D93A9300CADBC6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18D449CC22D8CFC600CADBC6 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		18D449DF22D93AAB00CADBC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18D449CF22D8CFC800CADBC6 /* Assets.xcassets */,
+				18D449D122D8CFC800CADBC6 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18D449E022D93B1700CADBC6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */,
+				18D449DC22D9384500CADBC6 /* Item.swift in Sources */,
 				18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
