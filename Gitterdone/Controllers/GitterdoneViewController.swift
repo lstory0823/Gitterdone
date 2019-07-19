@@ -7,28 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class GitterdoneViewController: UITableViewController {
 
     var itemArray = [Item]()
     
-    let defaults = UserDefaults.standard
+    var selectedCategory : Category? {
+        didSet {
+            loadItems()
+        }
+    }
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let newItem = Item()
-        newItem.title = "Go on first date with Lizzie"
-        itemArray.append(newItem)
-        
-        let newItem2 = Item()
-        newItem2.title = "Go on second date with Lizzie"
-        itemArray.append(newItem2)
-        
-        // Do any additional setup after loading the view.
-        if let items = defaults.array(forKey: "ToDoListArray") as? [Item] {
-            itemArray = items
-        }
         
     }
 
@@ -54,11 +48,15 @@ class GitterdoneViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // print(itemArray[indexPath.row])
         
-        itemArray[indexPath.row].completed = !itemArray[indexPath.row].completed
-            
+//        itemArray[indexPath.row].completed = !itemArray[indexPath.row].completed
+        
+        context.delete(itemArray[indexPath.row])
+        itemArray.remove(at: indexPath.row)
+        
+        saveItems()
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        tableView.reloadData()
     }
     
 //MARK - Add New Items
@@ -70,14 +68,19 @@ class GitterdoneViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             //What will happen when the user clicks the add item button
-            let newestItem = Item()
+            
+            let newestItem = Item(context: self.context)
+            
+            newestItem.completed = false
+            
             newestItem.title = textField.text!
+            
+            newestItem.parentCategory = self.selectedCategory
             
             self.itemArray.append(newestItem)
             
-            self.defaults.set(self.itemArray, forKey: "ToDoListArray")
+            self.saveItems()
             
-            self.tableView.reloadData()
         }
         
         alert.addTextField { (alertTextField) in
@@ -92,6 +95,65 @@ class GitterdoneViewController: UITableViewController {
         
     }
     
+    func saveItems() {
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context: \(error)")
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
+        
+        let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+     
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+        }
+        else {
+            request.predicate = categoryPredicate
+        }
+        
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context: \(error)")
+        }
+        
+        tableView.reloadData()
+        
+    }
     
 }
 
+
+//MARK: - Search Bar Methods
+extension GitterdoneViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text?.count == 0 {
+            loadItems()
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+            
+        }
+        else {
+            let request : NSFetchRequest<Item> = Item.fetchRequest()
+
+            let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+
+            request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+
+            loadItems(with: request, predicate: predicate)
+        }
+        
+    }
+    
+}

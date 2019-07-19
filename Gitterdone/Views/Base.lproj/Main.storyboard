@@ -10,6 +10,45 @@
     </dependencies>
     <scenes>
         <!--Gitterdone-->
+        <scene sceneID="KLQ-NF-iMu">
+            <objects>
+                <tableViewController id="vR3-4h-i6S" customClass="CategoryViewController" customModule="Gitterdone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NdL-da-2DE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="0dr-ec-MsO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0dr-ec-MsO" id="WKK-xF-IOc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vR3-4h-i6S" id="f68-Vl-dr7"/>
+                            <outlet property="delegate" destination="vR3-4h-i6S" id="dNf-Ke-yuS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Gitterdone" id="8HF-Zn-e5f">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MNB-vU-K3a">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="vR3-4h-i6S" id="XtX-vZ-GaT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="IFY-aN-Jcz" kind="show" identifier="goToItems" id="v2g-xC-o6U"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bi-fo-UTE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="121"/>
+        </scene>
+        <!--Items-->
         <scene sceneID="MgA-aD-rTN">
             <objects>
                 <tableViewController id="IFY-aN-Jcz" customClass="GitterdoneViewController" customModule="Gitterdone" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,9 +56,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="U34-Wp-qzk">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="IFY-aN-Jcz" id="FAo-Ds-CIb"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoItemCell" id="QrX-dM-wZb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QrX-dM-wZb" id="Xrd-nZ-5Xp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -32,7 +79,7 @@
                             <outlet property="delegate" destination="IFY-aN-Jcz" id="zCc-u1-M6g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Gitterdone" id="DrK-PW-7PW">
+                    <navigationItem key="navigationItem" title="Items" id="DrK-PW-7PW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cgL-OG-Ox8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -43,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2um-sB-2cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="920.79999999999995" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1570" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3zS-c7-rBg">
@@ -60,7 +107,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="IFY-aN-Jcz" kind="relationship" relationship="rootViewController" id="amw-pt-QuM"/>
+                        <segue destination="vR3-4h-i6S" kind="relationship" relationship="rootViewController" id="shl-3h-6IK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amt-zY-SY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
