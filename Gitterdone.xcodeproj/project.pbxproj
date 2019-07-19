@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1871995322DD1DF60084C4CA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1871995122DD1DF60084C4CA /* DataModel.xcdatamodeld */; };
 		1878989722DFF3BE0066D617 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878989622DFF3BE0066D617 /* CategoryViewController.swift */; };
+		18A2260A2DD3C8E6D1335FD3 /* Pods_Gitterdone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */; };
 		18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449C822D8CFC600CADBC6 /* AppDelegate.swift */; };
 		18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */; };
 		18D449CE22D8CFC600CADBC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D449CC22D8CFC600CADBC6 /* Main.storyboard */; };
@@ -26,6 +27,9 @@
 		18D449CF22D8CFC800CADBC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D449D222D8CFC800CADBC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D449D422D8CFC800CADBC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitterdone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBB4D00DE1905DA973DF25AD /* Pods-Gitterdone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitterdone.debug.xcconfig"; path = "Target Support Files/Pods-Gitterdone/Pods-Gitterdone.debug.xcconfig"; sourceTree = "<group>"; };
+		DEB571EA11A76F11A11CD5BA /* Pods-Gitterdone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitterdone.release.xcconfig"; path = "Target Support Files/Pods-Gitterdone/Pods-Gitterdone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A2260A2DD3C8E6D1335FD3 /* Pods_Gitterdone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				18D449C722D8CFC600CADBC6 /* Gitterdone */,
 				18D449C622D8CFC600CADBC6 /* Products */,
+				9FCD0B5990C8B4EF3BFD18C4 /* Pods */,
+				3D1BD0DF8CCB78BA48795657 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +109,24 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		3D1BD0DF8CCB78BA48795657 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FCD0B5990C8B4EF3BFD18C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBB4D00DE1905DA973DF25AD /* Pods-Gitterdone.debug.xcconfig */,
+				DEB571EA11A76F11A11CD5BA /* Pods-Gitterdone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18D449D722D8CFC800CADBC6 /* Build configuration list for PBXNativeTarget "Gitterdone" */;
 			buildPhases = (
+				102B36AC369581A7C79C5B3B /* [CP] Check Pods Manifest.lock */,
 				18D449C122D8CFC600CADBC6 /* Sources */,
 				18D449C222D8CFC600CADBC6 /* Frameworks */,
 				18D449C322D8CFC600CADBC6 /* Resources */,
+				40B5DDE145842012F6085E82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +194,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		102B36AC369581A7C79C5B3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gitterdone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40B5DDE145842012F6085E82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gitterdone/Pods-Gitterdone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gitterdone/Pods-Gitterdone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gitterdone/Pods-Gitterdone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18D449C122D8CFC600CADBC6 /* Sources */ = {
@@ -320,6 +389,7 @@
 		};
 		18D449D822D8CFC800CADBC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBB4D00DE1905DA973DF25AD /* Pods-Gitterdone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +408,7 @@
 		};
 		18D449D922D8CFC800CADBC6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB571EA11A76F11A11CD5BA /* Pods-Gitterdone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
