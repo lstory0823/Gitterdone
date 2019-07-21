@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1871995322DD1DF60084C4CA /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1871995122DD1DF60084C4CA /* DataModel.xcdatamodeld */; };
 		1878989722DFF3BE0066D617 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878989622DFF3BE0066D617 /* CategoryViewController.swift */; };
 		18A2260A2DD3C8E6D1335FD3 /* Pods_Gitterdone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */; };
+		18CF9FF622E253F30008415B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9FF522E253F30008415B /* Item.swift */; };
+		18CF9FF822E254000008415B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9FF722E254000008415B /* Category.swift */; };
 		18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449C822D8CFC600CADBC6 /* AppDelegate.swift */; };
 		18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */; };
 		18D449CE22D8CFC600CADBC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D449CC22D8CFC600CADBC6 /* Main.storyboard */; };
@@ -18,8 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1871995222DD1DF60084C4CA /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		1878989622DFF3BE0066D617 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		18CF9FF522E253F30008415B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		18CF9FF722E254000008415B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		18D449C522D8CFC600CADBC6 /* Gitterdone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitterdone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D449C822D8CFC600CADBC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitterdoneViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +80,8 @@
 		18D449DD22D93A6800CADBC6 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				1871995122DD1DF60084C4CA /* DataModel.xcdatamodeld */,
+				18CF9FF522E253F30008415B /* Item.swift */,
+				18CF9FF722E254000008415B /* Category.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -123,7 +126,6 @@
 				CBB4D00DE1905DA973DF25AD /* Pods-Gitterdone.debug.xcconfig */,
 				DEB571EA11A76F11A11CD5BA /* Pods-Gitterdone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -242,10 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CF9FF622E253F30008415B /* Item.swift in Sources */,
 				1878989722DFF3BE0066D617 /* CategoryViewController.swift in Sources */,
 				18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */,
-				1871995322DD1DF60084C4CA /* DataModel.xcdatamodeld in Sources */,
 				18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */,
+				18CF9FF822E254000008415B /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,19 +450,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1871995122DD1DF60084C4CA /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1871995222DD1DF60084C4CA /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 1871995222DD1DF60084C4CA /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 18D449BD22D8CFC600CADBC6 /* Project object */;
 }
