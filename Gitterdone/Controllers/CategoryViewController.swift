@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
@@ -20,9 +20,8 @@ class CategoryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         loadItems()
-         //MARK: - Data Manipulation Methods
         
     }
     
@@ -32,9 +31,17 @@ class CategoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         cell.textLabel?.text = categories?[indexPath.row].name ?? ""
+        
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        }
+        
+        cell.textLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         return cell
     }
@@ -109,7 +116,26 @@ class CategoryViewController: UITableViewController {
 
     }
     
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let categoryToDelete = categories?[indexPath.row] {
+            
+            do {
+                try realm.write {
+                    realm.delete(categoryToDelete)
+                }
+            } catch {
+                print("Error Deleting Category: \(error)")
+            }
+            
+        }
+        
+    }
+    
 }
+
+
+
 
     
 

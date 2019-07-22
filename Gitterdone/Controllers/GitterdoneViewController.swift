@@ -9,19 +9,22 @@
 import UIKit
 import RealmSwift
 
-class GitterdoneViewController: UITableViewController {
+class GitterdoneViewController: SwipeTableViewController {
 
     var gitterdoneItems : Results<Item>?
     let realm = try! Realm()
     
     var selectedCategory : Category? {
+        
         didSet {
+    
             loadItems()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
     }
 
@@ -33,7 +36,7 @@ class GitterdoneViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = gitterdoneItems?[indexPath.row] {
             
@@ -44,6 +47,14 @@ class GitterdoneViewController: UITableViewController {
         } else {
             cell.textLabel?.text = ""
         }
+        
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        } else {
+            cell.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        }
+        
+        cell.textLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         return cell
     }
@@ -123,6 +134,22 @@ class GitterdoneViewController: UITableViewController {
 
         tableView.reloadData()
 
+    }
+    
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let itemToDelete = gitterdoneItems?[indexPath.row] {
+            
+            do {
+                try realm.write {
+                    realm.delete(itemToDelete)
+                }
+            } catch {
+                print("Error Deleting Category: \(error)")
+            }
+            
+        }
+        
     }
 
 }

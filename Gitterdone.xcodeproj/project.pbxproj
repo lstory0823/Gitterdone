@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1878989722DFF3BE0066D617 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878989622DFF3BE0066D617 /* CategoryViewController.swift */; };
 		18A2260A2DD3C8E6D1335FD3 /* Pods_Gitterdone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */; };
+		18B5BED122E4E90400ED74C5 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5BED022E4E90400ED74C5 /* SwipeTableViewController.swift */; };
 		18CF9FF622E253F30008415B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9FF522E253F30008415B /* Item.swift */; };
 		18CF9FF822E254000008415B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF9FF722E254000008415B /* Category.swift */; };
 		18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D449C822D8CFC600CADBC6 /* AppDelegate.swift */; };
@@ -19,7 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		145A0B0EC05B6D851197F616 /* Pods-Gitterdone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitterdone.release.xcconfig"; path = "Target Support Files/Pods-Gitterdone/Pods-Gitterdone.release.xcconfig"; sourceTree = "<group>"; };
 		1878989622DFF3BE0066D617 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		18B5BED022E4E90400ED74C5 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		18CF9FF522E253F30008415B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		18CF9FF722E254000008415B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		18D449C522D8CFC600CADBC6 /* Gitterdone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gitterdone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +32,7 @@
 		18D449CF22D8CFC800CADBC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D449D222D8CFC800CADBC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D449D422D8CFC800CADBC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19B0D0FC208BCCC9D0C1EC32 /* Pods-Gitterdone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitterdone.debug.xcconfig"; path = "Target Support Files/Pods-Gitterdone/Pods-Gitterdone.debug.xcconfig"; sourceTree = "<group>"; };
 		C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gitterdone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB4D00DE1905DA973DF25AD /* Pods-Gitterdone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitterdone.debug.xcconfig"; path = "Target Support Files/Pods-Gitterdone/Pods-Gitterdone.debug.xcconfig"; sourceTree = "<group>"; };
 		DEB571EA11A76F11A11CD5BA /* Pods-Gitterdone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gitterdone.release.xcconfig"; path = "Target Support Files/Pods-Gitterdone/Pods-Gitterdone.release.xcconfig"; sourceTree = "<group>"; };
@@ -51,8 +55,8 @@
 			children = (
 				18D449C722D8CFC600CADBC6 /* Gitterdone */,
 				18D449C622D8CFC600CADBC6 /* Products */,
-				9FCD0B5990C8B4EF3BFD18C4 /* Pods */,
 				3D1BD0DF8CCB78BA48795657 /* Frameworks */,
+				6378B3F6F40CC8C046D64667 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +103,7 @@
 			children = (
 				18D449CF22D8CFC800CADBC6 /* Assets.xcassets */,
 				18D449D122D8CFC800CADBC6 /* LaunchScreen.storyboard */,
+				9FCD0B5990C8B4EF3BFD18C4 /* Pods */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		18D449E022D93B1700CADBC6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				18B5BED022E4E90400ED74C5 /* SwipeTableViewController.swift */,
 				1878989622DFF3BE0066D617 /* CategoryViewController.swift */,
 				18D449CA22D8CFC600CADBC6 /* GitterdoneViewController.swift */,
 			);
@@ -118,6 +124,16 @@
 				C5A4DC7A806F4E944257A22A /* Pods_Gitterdone.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6378B3F6F40CC8C046D64667 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19B0D0FC208BCCC9D0C1EC32 /* Pods-Gitterdone.debug.xcconfig */,
+				145A0B0EC05B6D851197F616 /* Pods-Gitterdone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		9FCD0B5990C8B4EF3BFD18C4 /* Pods */ = {
@@ -248,6 +264,7 @@
 				1878989722DFF3BE0066D617 /* CategoryViewController.swift in Sources */,
 				18D449CB22D8CFC600CADBC6 /* GitterdoneViewController.swift in Sources */,
 				18D449C922D8CFC600CADBC6 /* AppDelegate.swift in Sources */,
+				18B5BED122E4E90400ED74C5 /* SwipeTableViewController.swift in Sources */,
 				18CF9FF822E254000008415B /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
